@@ -10,24 +10,22 @@ use App\Http\Controllers\Controller;
 
 class LibraryController extends Controller
 {
-    
-    public function list() 
+
+    public function list()
     {
-        
-        $libraries = Library::all();
-        $libraries->artist();print_r($libraries);die;
+        $libraries = Library::with('artist', 'gender')->get();
         return view('library_list', compact('libraries'));
     }
 
-    public function show($id) 
+    public function show($id)
     {
         $library = Library::find($id);
         return view('library_show', compact('library'));
     }
 
-    public function create(Request $request) 
+    public function create(Request $request)
     {
-        if($request->input('title') !== null) {
+        if ($request->input('title') !== null) {
             $library = new Library;
             $library->title = $request->input('title');
             $library->artist_id = $request->input('artist');
@@ -40,26 +38,28 @@ class LibraryController extends Controller
         return view('library_form', ['path' => 'create', 'artists' => $artists, 'genders' => $genders]);
     }
 
-    public function update(Request $request, $id = null) 
+    public function update(Request $request, $id = null)
     {
-        if($request->input('title') !== null) {
+        if ($request->input('title') !== null) {
             $library = Library::find($request->input('id'));
             $library->name = $request->input('title');
             $library->save();
             return redirect('/library');
         }
+        $artists = Artist::all();
+        $genders = Gender::all();
         $library = Library::find($id);
-        return view('library_form', ['path' => 'update', 'library' => $library]);
+        return view('library_form', ['path' => 'update', 'library' => $library, 'artists' => $artists, 'genders' => $genders]);
     }
 
-    public function delete($id) 
+    public function delete($id)
     {
         $library = Library::find($id);
         $library->delete();
         return redirect('/library');
     }
 
-    public function destroy() 
+    public function destroy()
     {
         return redirect('/library');
     }

@@ -14,17 +14,17 @@
     </thead>
     <tboby>
         @foreach ($libraries as $library)
-            <tr>
-                <td>{{ $library->id }}</td>
-                <td>{{ $library->title }}</td>
-                <td>{{ $library->artist }}</td>
-                <td>{{ $library->gender }}</td>
-                <td>
-                    <a href="/gender/show/{{ $library->id }}"><i class="fa-solid fa-eye"></i></a>&nbsp;&nbsp;&nbsp;
-                    <a href="/gender/update/{{ $library->id }}"><i class="fa-solid fa-pen-to-square mr-2"></i></a>&nbsp;&nbsp;&nbsp;
-                    <a href="/gender/delete/{{ $library->id }}"><i class="fa-solid fa-trash-can"></i></a>
-                </td>
-            </tr>
+        <tr>
+            <td>{{ $library->id }}</td>
+            <td>{{ $library->title }}</td>
+            <td>{{ $library->artist->name }}</td>
+            <td>{{ $library->gender->name }}</td>
+            <td>
+                <a href="/library/show/{{ $library->id }}"><i class="fa-solid fa-eye"></i></a>&nbsp;&nbsp;&nbsp;
+                <a href="/library/update/{{ $library->id }}"><i class="fa-solid fa-pen-to-square mr-2"></i></a>&nbsp;&nbsp;&nbsp;
+                <a href="/library/delete/{{ $library->id }}"><i class="fa-solid fa-trash-can"></i></a>
+            </td>
+        </tr>
         @endforeach
     </tboby>
 </table>

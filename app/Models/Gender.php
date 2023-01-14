@@ -10,4 +10,9 @@ class Gender extends Model
     use HasFactory;
 
     protected $table = "gender";
+
+    public function libraries()
+    {
+        return $this->hasMany(Gender::class, 'gender_id');
+    }
 }

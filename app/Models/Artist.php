@@ -13,6 +13,6 @@ class Artist extends Model
 
     public function libraries()
     {
-        return $this->belongTo(Artist::class,'artist_id');
+        return $this->hasMany(Artist::class, 'artist_id');
     }
 }

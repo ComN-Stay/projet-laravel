@@ -12,7 +12,7 @@
         <label for="artist" class="form-label">Artiste</label>
         <select name="artist" id="artist">
             @foreach ($artists as $artist)
-                <option value="{{ $artist->id }}">{{ $artist->name }}</option>
+            <option value="{{ $artist->id }}" @if (isset($library) && $artist->id == $library->artist_id) selected @endif>{{ $artist->name }}</option>
             @endforeach
         </select>
     </div>
@@ -20,7 +20,7 @@
         <label for="gender" class="form-label">Genre</label>
         <select name="gender" id="gender">
             @foreach ($genders as $gender)
-                <option value="{{ $gender->id }}">{{ $gender->name }}</option>
+            <option value="{{ $gender->id }}" @if (isset($library) && $gender->id == $library->gender_id) selected @endif>{{ $gender->name }}</option>
             @endforeach
         </select>
     </div>

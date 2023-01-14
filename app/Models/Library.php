@@ -13,11 +13,11 @@ class Library extends Model
 
     public function artist()
     {
-        return $this->hasOne(Artist::class);
+        return $this->belongsTo(Artist::class);
     }
 
     public function gender()
     {
-        return $this->hasOne(Gender::class);
+        return $this->belongsTo(Gender::class);
     }
 }
