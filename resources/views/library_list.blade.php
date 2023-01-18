@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Page liste CD</h1>
-<table class="table">
+<table class="display">
     <thead>
         <tr>
             <th>ID</th>

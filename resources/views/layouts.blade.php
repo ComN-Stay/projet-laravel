@@ -47,6 +47,7 @@
 
 <!-- CSS Files -->
 <link id="pagestyle" href="/assets/css/material-dashboard.css?v=3.0.4" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
 
   </head>
 
@@ -256,10 +257,16 @@
 </div>
 
 <!--   Core JS Files   -->
+<script
+  src="https://code.jquery.com/jquery-3.6.3.min.js"
+  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+  crossorigin="anonymous"></script>
 <script src="/assets/js/core/popper.min.js" ></script>
 <script src="/assets/js/core/bootstrap.min.js" ></script>
 <script src="/assets/js/plugins/perfect-scrollbar.min.js" ></script>
 <script src="/assets/js/plugins/smooth-scrollbar.min.js" ></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+<script src="/assets/js/custom.js" ></script>
 
 
 

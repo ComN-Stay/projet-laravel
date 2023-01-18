@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Page liste artiste</h1>
-<table class="table">
+<table class="display">
     <thead>
         <tr>
             <th>ID</th>
